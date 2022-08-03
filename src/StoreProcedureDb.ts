@@ -136,7 +136,7 @@ export class StoreProcedureDb {
     public async executeTransactionalSp(connection: any): Promise<any> {
         try {
             const resultSet = await this.setResultSet(connection);
-            let rows : any;
+            let rows = new Array();
             let row;
             while (row = await resultSet.getRow()){
                 rows.push(row);
