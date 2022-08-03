@@ -44,7 +44,7 @@ export class StoreProcedureDb {
             connection = await oracledb.getConnection();
             // ver https://github.com/oracle/node-oracledb/issues/1194#issuecomment-579279555
             const resultSet = await this.setResultSet(connection);
-            let rows : Array<any>;
+            let rows : Array<Object>;
             let row;
             while (row = await resultSet.getRow()){
                 rows.push(row);
